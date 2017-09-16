@@ -1,6 +1,6 @@
 package fizzBuzz;
 import java.util.Scanner;
-
+//test
 public class FizzBuzzSeveralInts {
 	
 	public static void main(String[] args){
