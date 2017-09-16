@@ -12,7 +12,7 @@ public class FizzBuzzSeveralInts {
 			FizzBuzzMethod(next);
 		}
 		
-		
+		scan.close();
 		
 	}
 	
