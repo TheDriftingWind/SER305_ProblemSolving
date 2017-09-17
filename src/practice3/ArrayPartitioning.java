@@ -39,11 +39,6 @@ public class ArrayPartitioning {
 		scan.close();
 
 	}
-	
-//	public static void swap(String a, String b){
-//		String c = a;
-//		a = b;
-//		b = c;
-//	}
+
 
 }
