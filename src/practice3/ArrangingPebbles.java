@@ -12,7 +12,6 @@ public class ArrangingPebbles {
 		
 		String map = "wgr";
 		int letter = 0;
-		//int pointer = 1;
 		
 		//start at the first element
 		for(int i = 0; i < input.length; i++){
@@ -25,12 +24,7 @@ public class ArrangingPebbles {
 				if(replace <= i && letter < 2){
 					//move on to the next letter.
 					letter++;
-					if(input[i] != String.valueOf(map.charAt(letter)) ){
-						replace = Arrays.asList(input).lastIndexOf( String.valueOf(map.charAt(letter)) );
-						if(replace > i)
-						input[replace] = input[i];
-						input[i] = String.valueOf(map.charAt(letter));
-					}
+					i = i -1; //decrement the index so that you don't skip this element
 				}else{
 					//if there are more occurrences, find it and swap the current element with the needed letter
 					input[replace] = input[i];
@@ -38,18 +32,13 @@ public class ArrangingPebbles {
 				}
 				
 			}
-			//DEBUG
-//			System.out.println("Letter: " + String.valueOf(map.charAt(letter)) + " LastIndex: " + Arrays.asList(input).lastIndexOf( String.valueOf(map.charAt(letter))) + "| Index: " + i );
-//			
-//			for(int j = 0; j < input.length; j++){
-//				System.out.print(input[j] + " ");
-//				
-//			}
-//			System.out.println();
 		}
-		
+		//Print out the results
 		for(int i = 0; i < input.length; i++){
-			System.out.print(input[i] + " ");
+			System.out.print(input[i]);
+			if(i < input.length-1){
+			System.out.print(" ");
+			}
 		}
 		
 		scan.close();
