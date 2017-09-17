@@ -2,7 +2,7 @@ package practice3;
 
 import java.util.Scanner;
 
-public class problem1 {
+public class ArrayPartitioning {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
