@@ -22,6 +22,8 @@ public class BoomerAtGiftShop {
 			
 			System.out.println(compare(cost, budget));
 		}
+		
+		scan.close();
 
 	}
 	
@@ -38,9 +40,8 @@ public class BoomerAtGiftShop {
 			result = "BOOMER HAS MORE THAN ENOUGH";
 		}
 		
-		
 		return result;
-		
+
 	}
 
 }

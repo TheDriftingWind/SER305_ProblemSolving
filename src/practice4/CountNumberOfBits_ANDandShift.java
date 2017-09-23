@@ -10,7 +10,7 @@ public class CountNumberOfBits_ANDandShift {
 		
 		int count = 0;
 		while(input != 0){
-			count = count + input&1;
+			count = count + (input&1);
 			input = input>>>1;
 		}
 		
