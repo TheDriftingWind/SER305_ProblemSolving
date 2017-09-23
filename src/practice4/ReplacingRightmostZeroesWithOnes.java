@@ -9,11 +9,15 @@ public class ReplacingRightmostZeroesWithOnes {
 		
 		int input = scan.nextInt();
 		
-		//10100 -- Input
-		//01011 -- ~Input
-		//
-		//10111 -- Result
+		if(input == 0){
+			System.out.println(0);
+		}else{
+			input = ((input)|(input-1));
+			
+			System.out.println(input);	
+		}
 		
+		scan.close();
 		
 	}
 
