@@ -8,10 +8,10 @@ public class RemovingBlankSpaces {
 		Scanner scan = new Scanner(System.in);
 		
 		int numLine = scan.nextInt(); //number of lines
-		//scan.nextLine(); //clear the line
+		scan.nextLine(); //clear the line
 		
 		//for each line...
-		for(int i = 0; i <= numLine; i++){
+		for(int i = 0; i < numLine; i++){
 			String sentence = scan.nextLine(); // read in the sentence
 			StringBuilder sb = new StringBuilder(sentence); //make it a string builder to be able to delete specific characters
 			
