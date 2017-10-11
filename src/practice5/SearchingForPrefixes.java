@@ -15,6 +15,7 @@ public class SearchingForPrefixes {
 		//use pointers to search through the sentence
 		int pointer_i = 0; //incrementing pointer
 		int pointer_c = 0; //word check pointers
+		int found_prefixes = 0;
 		boolean found_word = true;
 				
 		while (pointer_i < sentence.length()){
@@ -33,9 +34,10 @@ public class SearchingForPrefixes {
 						chars_matched++;
 						if(chars_matched == keyword.length()){
 							//if all the letters match, get the rest of the word, print the word found and break the inner while loop
-							while(sentence.charAt(pointer_c) != ' '){
+							while(sentence.charAt(pointer_c) != ' ' && sentence.charAt(pointer_c) != '.' && sentence.charAt(pointer_c) != ',' ){
 								pointer_c++;
 							}
+							found_prefixes++;
 							System.out.println(sentence.substring(pointer_i, pointer_c));
 							found_word = false; //continue to search for more matches
 							check_finished = true;//break this loop
@@ -62,6 +64,9 @@ public class SearchingForPrefixes {
 			}
 		}
 		
+		if(found_prefixes == 0){
+			System.out.println("A word containing the given prefix was not found.");
+		}
 		scan.close();
 		
 
