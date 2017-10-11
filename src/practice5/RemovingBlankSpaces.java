@@ -8,10 +8,10 @@ public class RemovingBlankSpaces {
 		Scanner scan = new Scanner(System.in);
 		
 		int numLine = scan.nextInt(); //number of lines
-		scan.nextLine(); //clear the line
+		//scan.nextLine(); //clear the line
 		
 		//for each line...
-		for(int i = 0; i < numLine; i++){
+		for(int i = 0; i <= numLine; i++){
 			String sentence = scan.nextLine(); // read in the sentence
 			StringBuilder sb = new StringBuilder(sentence); //make it a string builder to be able to delete specific characters
 			
@@ -33,36 +33,30 @@ public class RemovingBlankSpaces {
 			
 			//now look for the next space
 			while(looking_for_space && pointer_p < sentence.length()){
-				if(pointer_p == ' ' && pointer_p+1 != ' '){
+				if(sb.charAt(pointer_p) == ' ' && sb.charAt(pointer_p+1) != ' '){
 					//if you found only 1 space... leave it alone
 					pointer_p++;
 				}
-				else if(pointer_p == ' ' && pointer_p+1 == ' '){
+				else if(sb.charAt(pointer_p) == ' ' && sb.charAt(pointer_p+1) == ' '){
 					//if you found multiple spaces...set the checking pointer to pointer_p's location
 					pointer_c = pointer_p;
-					while(pointer_c+1 == ' '){
+					while(sb.charAt(pointer_c+1) == ' '){
 						//until the checking pointer is at the last space...
 						pointer_c++;
 					}
 					//take the difference to find the number of spaces you need to delete
 					for(int x = 0; x < (pointer_c - pointer_p); x++){
-						
+						sb.deleteCharAt(pointer_p);
 					}
+					sentence = sb.toString();
 				} else {
 					//you don't find a space...
 					pointer_p++;
 				}
 			}
 			
-			
+			System.out.println(sb.toString());
 		}
-		
-		
-		StringBuilder strB = new StringBuilder("B  A");
-		strB.deleteCharAt(1);
-		System.out.println(strB.toString());
-		strB.deleteCharAt(1);
-		System.out.println(strB.toString());
 		
 		scan.close();
 
