@@ -40,7 +40,7 @@ public class AnotherSortingApproach {
 			result = result + " " + out[z];
 		}
 		result = result.substring(1);
-		System.out.println(result);
+		System.out.print(result);
 	}
 
 }
