@@ -10,6 +10,7 @@ public class AnotherSortingApproach {
 		int range = scan.nextInt();
 		scan.nextLine();
 		String[] integers = scan.nextLine().split(" ");
+		scan.close();
 		//Create an array c with k integers, each initialized to 0
 		int[] c = new int[range];
 		//Create an array out of size n to store the output
