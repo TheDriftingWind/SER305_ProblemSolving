@@ -12,19 +12,19 @@ public class DeterminingVisualAppealOfABinaryTree {
 		int counter = 0;
 		ArrayList<Integer> leafHeights = new ArrayList<Integer>();
 		
-		//add special case. The algorithm won't check for a right side if none exists
+		//add special case. The algorithm won't check for a right side on the root if none exists
 		if(root.getRightChild() == null){
 			leafHeights.add(counter);
 		}
 		//Move the pointer to the left most node
-		while(pointer.getLeftChild() != null){
-			//store nodes in a stack to pop them in order
+		while(pointer != null){
 			nodeStack.push(pointer);
 			pointer = pointer.getLeftChild();
-			counter+=1;
+			counter = counter + 1;
 		}
-		nodeStack.push(pointer);
+		counter -= 1;	//decrement to account for the while loop counting the starting node as 1
 		leafHeights.add(counter);
+		
 		
 		//iterate through the stack
 		while(!nodeStack.isEmpty()){
@@ -43,8 +43,9 @@ public class DeterminingVisualAppealOfABinaryTree {
 				while(pointer != null){
 					nodeStack.push(pointer);
 					pointer = pointer.getLeftChild();
-					counter += 1;
+					counter = counter + 1;
 				}
+				counter -= 1; //decrement by one to get rid of the extra count of the first node
 				leafHeights.add(counter);
 			} else {
 				counter -= 1;
@@ -55,17 +56,20 @@ public class DeterminingVisualAppealOfABinaryTree {
 		int max = 0;
 		int min = leafHeights.get(0);
 		for(int i = 0; i < leafHeights.size(); i++){
+			//System.out.println("index[" + i + "] - " + leafHeights.get(i));
 			if(leafHeights.get(i) > max)
 				max = leafHeights.get(i);
 			if(leafHeights.get(i) < min)
 				min = leafHeights.get(i);
 		}
 		
+		//System.out.println(max-min);
 		//if the difference between the shortest and longest branch is greater than 1, it's not balanced
 		if((max-min) > 1){
-			System.out.println("The binary tree IS NOT visually appealing.");
+			System.out.print("The binary tree IS NOT visually appealing.");
 		} else {
-			System.out.println("The binary tree IS visually appealing.");
+			System.out.print("The binary tree IS visually appealing.");
 		}
 	}
 }
+
