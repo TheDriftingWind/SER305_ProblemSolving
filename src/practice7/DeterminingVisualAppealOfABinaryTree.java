@@ -73,3 +73,26 @@ public class DeterminingVisualAppealOfABinaryTree {
 	}
 }
 
+/*
+ * Time Complexity: O(n) where n is the number of nodes
+ */
+
+/*
+ * Space Complexity: O(h+l) where h is the height of the tree and l is the number of leaves
+ */
+
+/*
+ * Pseudo Code:
+ * 1.)Initialize a counter
+ * 2.)Run an InOrder traversal...
+ * 		when you move down to a child node, increment the counter by 1
+ * 		when you move up to a parent node, decrement the counter by 1
+ * 3.) When you reach a leaf, storage the value of the counter
+ * 4.) After you finish the traversal...
+ * 		check the array of stored heights.
+ * 5.) Compare the highest and lowest heights stored.
+ * 6.) If the difference between the highest and lowest heights stored is greater than 1...
+ * 			Print "Binary tree IS NOT visually appealing"
+ * 		else...
+ * 			Print "Binary tree IS visually appealing"
+ */
