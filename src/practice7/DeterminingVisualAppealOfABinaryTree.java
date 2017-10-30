@@ -12,6 +12,10 @@ public class DeterminingVisualAppealOfABinaryTree {
 		int counter = 0;
 		ArrayList<Integer> leafHeights = new ArrayList<Integer>();
 		
+		//add special case. The algorithm won't check for a right side if none exists
+		if(root.getRightChild() == null){
+			leafHeights.add(counter);
+		}
 		//Move the pointer to the left most node
 		while(pointer.getLeftChild() != null){
 			//store nodes in a stack to pop them in order
@@ -41,6 +45,7 @@ public class DeterminingVisualAppealOfABinaryTree {
 					pointer = pointer.getLeftChild();
 					counter += 1;
 				}
+				leafHeights.add(counter);
 			} else {
 				counter -= 1;
 			}
