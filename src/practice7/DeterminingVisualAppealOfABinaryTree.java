@@ -58,9 +58,9 @@ public class DeterminingVisualAppealOfABinaryTree {
 		
 		//if the difference between the shortest and longest branch is greater than 1, it's not balanced
 		if((max-min) > 1){
-			System.out.println("The binary tree IS NOT vissually appealing.");
+			System.out.println("The binary tree IS NOT visually appealing.");
 		} else {
-			System.out.println("The binary tree IS vissually appealing.");
+			System.out.println("The binary tree IS visually appealing.");
 		}
 	}
 }
