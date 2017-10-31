@@ -8,7 +8,7 @@ public class BoomerBackAtGiftShop {
 		Scanner scan = new Scanner(System.in);
 		int numLine = scan.nextInt();
 		
-		for(int i = 0; i <= numLine; i++){
+		for(int i = 0; i < numLine; i++){
 			int numItems = scan.nextInt();
 			//store parallel arrays for the items and their prices for checking
 			float[] itemPrices = new float[numItems];
@@ -45,7 +45,7 @@ public class BoomerBackAtGiftShop {
 						if(itemPrices[x] != -1){
 							lowestPrice = itemPrices[x];
 							lowestPriceItem = x;
-							break;
+//							break;
 						}
 						
 					}
@@ -61,7 +61,7 @@ public class BoomerBackAtGiftShop {
 					}
 				}else{
 					//else you can't buy the lowest price item... you can't buy anything else
-					break;
+					budget = 0;
 				}
 			}
 			System.out.println(numItemsBought);
