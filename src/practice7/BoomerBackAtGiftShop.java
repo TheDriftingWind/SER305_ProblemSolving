@@ -45,7 +45,7 @@ public class BoomerBackAtGiftShop {
 						if(itemPrices[x] != -1){
 							lowestPrice = itemPrices[x];
 							lowestPriceItem = x;
-//							break;
+							break;
 						}
 						
 					}
@@ -73,3 +73,27 @@ public class BoomerBackAtGiftShop {
 	}
 
 }
+/*
+ * Time Complexity: O(n) where n is the number of individual items
+ * The maximum number of iterations that the algorithm needs to run is when Boomer has enough
+ * money to buy every single individual item available.
+ */
+
+/*
+ * Space Complexity: O(n) where n is the number of different items
+ * The algorithm uses 2 parallel arrays to store information about the item's price and stock.
+ * This makes it O(2n) which is O(n).
+ * In addition, a constant of integers variables are also used
+ */
+
+/*
+ * Pseudo Code:
+ * 1.)Find the prices and quantities for each of the items and your budget
+ * 2.)Find the cheapest item
+ * 3.)Until you run out of money or you can't buy anymore...
+ * 		if you have enough money to buy the cheapest item, buy the cheapest item
+ * 		if you have enough money to buy the cheapest item but it's out of stock,
+ * 			find the next cheapest item
+ * 		if you don't have enough money to buy the cheapest item that's not out of stock, you're done buying
+ * 4.)Print the number of items you bought
+ */
