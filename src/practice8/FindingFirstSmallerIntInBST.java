@@ -9,6 +9,7 @@ public class FindingFirstSmallerIntInBST {
 		Scanner scan = new Scanner(System.in);
 		int key = scan.nextInt();
 		BinaryTreeNode<Integer> root = BinaryTreeUtilities.readBinaryTreeFromText(scan);
+		boolean found = false;
 		
 		//System.out.println(key);
 		//System.out.println(root.getData());
@@ -16,7 +17,7 @@ public class FindingFirstSmallerIntInBST {
 		//special cases
 		if(root.getLeftChild() == null && root.getRightChild() == null) {
 			if(root.getData() > key){
-				System.out.print("None Found");
+				System.out.print("There is no node in the BST whose value is smaller than the given key.");
 			}
 		}
 		
@@ -24,14 +25,14 @@ public class FindingFirstSmallerIntInBST {
 		Stack<BinaryTreeNode<Integer>> stack = new Stack<BinaryTreeNode<Integer>>();
 		stack.push(root);
 		
-		while(stack.empty() == false){
+		while(stack.empty() == false && !found){
 			BinaryTreeNode<Integer> tempNode = stack.peek();
 			
 			//check if the current node is == or < the key
 			if(tempNode.getData() < key){
 				System.out.print(tempNode.getData());
 				//break while loop if found
-				break;
+				found = true;
 			}
 			//pop from stack
 			stack.pop();
@@ -42,9 +43,12 @@ public class FindingFirstSmallerIntInBST {
 			if(tempNode.getRightChild() != null){
 				stack.push(tempNode.getRightChild());
 			}
-			
-			
 		}
+		if(found == false){
+			System.out.print("There is no node in the BST whose value is smaller than the given key.");
+		}
+		
+		
 	}
 }
 
