@@ -43,4 +43,17 @@ public class FindingFirstSmallerIntInBST {
 	}
 }
 
+/*
+ * Time Complexity: O(n) where n is the number of nodes
+ * The algorithm performs a preorder traversal while performing a constant amount of
+ * actions each iteration. In the worst case, the a full traversal needs to be performed
+ * leading to a O(n) time complexity.
+ */
+
+/*
+ * Space Complexity: O(h) where h is the height of the tree
+ * The object that consumes the most amount of space is the stack of nodes.
+ * The space complexity is in O(h) because the stack never contains more nodes
+ * than the height of the tree. Nodes are no longer added once a leaf is reached.
+ */
 
