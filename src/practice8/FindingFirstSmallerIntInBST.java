@@ -10,16 +10,7 @@ public class FindingFirstSmallerIntInBST {
 		int key = scan.nextInt();
 		BinaryTreeNode<Integer> root = BinaryTreeUtilities.readBinaryTreeFromText(scan);
 		boolean found = false;
-		
-		//System.out.println(key);
-		//System.out.println(root.getData());
-		
-		//special cases
-		if(root.getLeftChild() == null && root.getRightChild() == null) {
-			if(root.getData() > key){
-				System.out.print("There is no node in the BST whose value is smaller than the given key.");
-			}
-		}
+
 		
 		//perform a preorder traversal
 		Stack<BinaryTreeNode<Integer>> stack = new Stack<BinaryTreeNode<Integer>>();
