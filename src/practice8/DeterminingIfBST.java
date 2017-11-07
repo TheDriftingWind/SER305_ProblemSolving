@@ -43,9 +43,9 @@ public class DeterminingIfBST {
 		}
 		
 		if(isBST){
-			System.out.print("The tree IS a binary search tree");
+			System.out.println("The tree IS a binary search tree.");
 		} else {
-			System.out.print("The tree IS NOT a binary search tree");
+			System.out.println("The tree IS NOT a binary search tree.");
 		}
 		
 	}
