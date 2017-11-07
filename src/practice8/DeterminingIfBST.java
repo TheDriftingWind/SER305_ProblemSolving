@@ -7,35 +7,47 @@ public class DeterminingIfBST {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int key = scan.nextInt();
 		BinaryTreeNode<Integer> root = BinaryTreeUtilities.readBinaryTreeFromText(scan);
-		int max = root.getData();
-		int min = root.getData();
 		Stack<BinaryTreeNode<Integer>> stack = new Stack<BinaryTreeNode<Integer>>();
-		//preorder traversal
-		//keep track of min and max in a subtree
-		while(stack.empty()){
-			BinaryTreeNode<Integer> tempNode = stack.peek();
-			
-			//subtree
-			if(tempNode.getLeftChild().getData() < tempNode.getData()){
-				//NOT BST
-			}
-			if(tempNode.getRightChild().getData() > tempNode.getData()){
-				//NOT BST 
-			}
-			
- 
-			//pop from stack
-			stack.pop();
-			//add left and right child
-			if(tempNode.getLeftChild() != null){
-				stack.push(tempNode.getLeftChild());
-			}
-			if(tempNode.getRightChild() != null){
-				stack.push(tempNode.getRightChild());
-			}
+		BinaryTreeNode<Integer> pointer = root;
+		int last_number = 0;
+		boolean isBST = true;
+		//inorder traversal
+		//start with left most leaf
+		while(pointer != null){
+			stack.push(pointer);
+			pointer = pointer.getLeftChild();
 		}
+		//initiate the last_number to check against...
+		last_number = stack.peek().getData();
+		
+		//perform inorder traversal
+		while(!stack.isEmpty() && isBST){
+			pointer = stack.pop();
+			//check if the current value is greater than the last_number. It should be greater than the last_number since it should be inorder
+			if(pointer.getData() < last_number){
+				//if the current value is smaller, the tree is not balanced
+				isBST = false;
+			} else {
+				//if the current value is greater, keep checking
+				last_number = pointer.getData();
+			}
+			if(pointer.getRightChild() != null){
+				pointer = pointer.getRightChild();
+				while(pointer != null){
+					stack.push(pointer);
+					pointer = pointer.getLeftChild();
+				}
+			}
+			
+		}
+		
+		if(isBST){
+			System.out.print("The tree IS a binary search tree");
+		} else {
+			System.out.print("The tree IS NOT a binary search tree");
+		}
+		
 	}
 
 }
