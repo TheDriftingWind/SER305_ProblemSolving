@@ -47,7 +47,7 @@ public class FindingFirstSmallerIntInBST {
  * Time Complexity: O(n) where n is the number of nodes
  * The algorithm performs a preorder traversal while performing a constant amount of
  * actions each iteration. In the worst case, the a full traversal needs to be performed
- * leading to a O(n) time complexity.
+ * leading to a O(n) time complexity. The algorithm only performs the traversal once.
  */
 
 /*

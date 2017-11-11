@@ -12,7 +12,7 @@ public class DeterminingIfBST {
 		BinaryTreeNode<Integer> pointer = root;
 		int last_number = 0;
 		boolean isBST = true;
-		//inorder traversal
+		//inorder traversal - will return all values in order if BST
 		//start with left most leaf
 		while(pointer != null){
 			stack.push(pointer);
@@ -51,3 +51,17 @@ public class DeterminingIfBST {
 	}
 
 }
+
+/*
+ * Time Complexity: O(n) where n is the number of nodes in the tree
+ * The worst case is if the algorithm needs to iterate through all the nodes in the inorder traversal
+ * in the tree to confirm that it is a Binary Search Tree.
+ */
+
+/*
+ * Space Complexity: O(h) where h is the height of the tree
+ * In addition to the binary tree input, the algorithm uses 3 extra variables: 1 pointer, 1 integer, and a stack
+ * The pointer and the integer use a constant amount of space. In the worst case, must store h number of nodes
+ * in the stack. The algorithm stops inserting nodes into the stack when a leaf is reached and proceeds to
+ * remove nodes from the stack. The stack will at worst contain h nodes.
+ */
