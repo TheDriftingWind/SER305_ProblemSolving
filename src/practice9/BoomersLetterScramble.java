@@ -122,3 +122,24 @@ public class BoomersLetterScramble {
 	}
 
 }
+
+/*
+ * Time Complexity: O(n*(k*s)) where n is the number of instructions, k is the longest rotation, and s is the length of the message string
+ * 
+ * The most potentially time consuming part of this program is the rotation method. In the worst case, the program will do nothing
+ * but rotations. The amount of time a rotation takes is equal to the number of times it has to rotation times the amount of time
+ * it takes to make a single rotation(left or right by 1). The amount of time it takes to make a single rotation(left or right) is
+ * equal to the length of the string as the method makes 1 iteration through the string to make the rotation. Thus, the time complexity
+ * of the rotate method is O(k*s). So, in the worst case, the most amount of time it would take to run this program is equal to the number
+ * of instructions there are(n) times the amount of time it takes to perform a rotation(k*s)
+ * Thus, O(n*(k*s)) 
+ * 
+ */
+
+/*
+ * Space Complexity: O(n) where n is the length of the message string
+ * The portion of the program that takes up the most memory are the arrays used to store the message string or a substring of it.
+ * Since methods use temporary variables, and always use a constant number of arrays to store a temporary string or substring of
+ * the message, the most space used at any given time is proportional to the length of the message times a constant.
+ * Any constant times the length of the message would yield a space complexity of O(n) where n is the length of the message string.
+ */
