@@ -12,7 +12,7 @@ public class ShiftingArrayElements {
 		int[] storage = new int[input.length];
 		
 		//run through element of the array of inputs
-		for(int i = 0; i < input.length; i++){
+		for(int i = 0; i < input.length-1; i++){
 			//the index to insert the current element in the input is at (currentIndex + length of the array - shift) modulus 5
 			int insertAt = (i + input.length - shift) % input.length;
 			//insert the element
